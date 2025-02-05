@@ -1,0 +1,21 @@
+# Composer vendor directory
+/vendor/
+
+# Composer lock file (for libraries, you typically don't commit the lock file)
+composer.lock
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# IDE or Editor directories and files
+/.idea/
+/*.sublime-workspace
+/*.sublime-project
+*.iml
+
+# Log and temporary files
+*.log
+tmp/
+cache/
+

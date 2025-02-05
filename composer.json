@@ -1,0 +1,21 @@
+{
+  "name": "ayyobro/doctrine-to-mermaid",
+  "description": "A simple recursive tool to convert Doctrine entities into Mermaid diagrams",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Derek Foster",
+      "email": "derek.foster@tri-powered-games.com"
+    }
+  ],
+  "require": {
+    "php": ">=7.4",
+    "doctrine/orm": "^2.9"
+  },
+  "autoload": {
+    "psr-4": {
+      "Ayyobro\\DoctrineToMermaid\\": "src/"
+    }
+  }
+}

@@ -197,13 +197,13 @@ The generated Mermaid diagram might look like this:
 ```mermaid
 erDiagram
     User {
-        int id (PK)
+        int id PK
         string username
         string email
     }
 
     Post {
-        int id (PK)
+        int id PK
         string title
         string content
     }

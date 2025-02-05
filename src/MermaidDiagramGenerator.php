@@ -73,7 +73,7 @@ class MermaidDiagramGenerator
         $metadata = $this->getMetadata($class);
 
         $tableName = $this->sanitize($metadata->getTableName());
-        $diagram = "    {$tableName} {\n";
+        $diagram = "    $tableName {\n";
 
         // Get identifiers for marking primary keys.
         $identifiers = $metadata->getIdentifierFieldNames();
@@ -86,8 +86,8 @@ class MermaidDiagramGenerator
             $sanitizedField = $this->sanitize($field);
             $type = $metadata->getTypeOfField($field);
             // Mark primary key fields with (PK)
-            $pkMarker = in_array($field, $identifiers, true) ? " (PK)" : "";
-            $diagram .= "        {$sanitizedField}{$pkMarker} : {$type}\n";
+            $pkMarker = in_array($field, $identifiers, true) ? " PK" : "";
+            $diagram .= "        {$sanitizedField}{$pkMarker} : $type\n";
         }
 
         $diagram .= "    }\n\n";
@@ -129,10 +129,10 @@ class MermaidDiagramGenerator
                 isset($association['joinTable']['name'])
             ) {
                 $joinTableName = $this->sanitize($association['joinTable']['name']);
-                $label .= " ({$joinTableName})";
+                $label .= " ($joinTableName)";
             }
 
-            $relationships .= "    {$sourceTable} {$relationType} {$targetTable} : \"{$label}\"\n";
+            $relationships .= "    $sourceTable $relationType $targetTable : \"$label\"\n";
 
             // Recursively process the target entity.
             $this->generateDiagramRecursively($association['targetEntity'], $relationships);

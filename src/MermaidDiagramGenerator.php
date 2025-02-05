@@ -3,6 +3,7 @@ declare(strict_types=1);
 /**
  * @author Ayyobro
  * @version 1.0
+ * @license GPL-3.0-or-later
  */
 
 namespace Ayyobro\DoctrineToMermaid;
